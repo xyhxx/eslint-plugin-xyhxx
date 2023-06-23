@@ -13,6 +13,9 @@
     "eslint-plugin",
     "xyhxx"
   ],
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
   "author": "xyh <603331487@qq.com>",
   "license": "MIT",
   "devDependencies": {
