@@ -1,0 +1,7 @@
+{
+  "plugins": ["xyhxx"],
+  "rules": {
+    "xyhxx/if-line": 1,
+    "xyhxx/object-pattern-newline": 1
+  }
+}
