@@ -2,7 +2,9 @@
   "name": "eslint-plugin-xyhxx",
   "version": "0.1.0",
   "description": "Customize eslint configurations",
+  "homepage": "https://github.com/xyhxx/eslint-plugin-xyhxx/blob/master/readme.md",
   "main": "./lib/index.js",
+  "repository": "https://github.com/xyhxx/eslint-plugin-xyhxx.git",
   "scripts": {
     "test": "vitest"
   },
