@@ -12,7 +12,7 @@ it('if-line', function() {
       valid: [
         {
           name: 'one line',
-          code: 'function test(value){if(value > 10) return \'\'; return \'123\'}',
+          code: 'function test(value){if(value > 10) return 12; return 22}',
         },
         {
           name: 'has BlockStatement',
@@ -38,7 +38,7 @@ it('if-line', function() {
           errors: [{message: 'if and content need to be on the same line'}],
           output: `
           function test(value){
-            if(value > 10)return '';
+            if(value > 10) return '';
   
             return '123';
           }`,
@@ -57,7 +57,30 @@ it('if-line', function() {
             if (
               val > 10 
               || val < 100
-            )return '';
+            ) return '';
+          }`,
+        },
+        {
+          name: 'with else',
+          code: `function test(val) {
+            if (
+              val > 10 
+              || val < 100
+            )
+              return '';
+            else 
+              return '123';
+          }`,
+          errors: [
+            {message: 'if and content need to be on the same line'},
+            {message: 'else and content need to be on the same line'},
+          ],
+          output: `function test(val) {
+            if (
+              val > 10 
+              || val < 100
+            ) return '';
+            else return '123';
           }`,
         },
       ],
