@@ -35,7 +35,7 @@ it('if-line', function() {
   
             return '123';
           }`,
-          errors: [{message: 'if and content need to be on the same line'}],
+          errors: [{messageId: 'ifMessage'}],
           output: `
           function test(value){
             if(value > 10) return '';
@@ -52,7 +52,7 @@ it('if-line', function() {
             )
               return '';
           }`,
-          errors: [{message: 'if and content need to be on the same line'}],
+          errors: [{messageId: 'ifMessage'}],
           output: `function test(val) {
             if (
               val > 10 
@@ -72,8 +72,8 @@ it('if-line', function() {
               return '123';
           }`,
           errors: [
-            {message: 'if and content need to be on the same line'},
-            {message: 'else and content need to be on the same line'},
+            {messageId: 'ifMessage'},
+            {messageId: 'elseMessage'},
           ],
           output: `function test(val) {
             if (
