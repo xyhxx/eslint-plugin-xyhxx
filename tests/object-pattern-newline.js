@@ -16,7 +16,7 @@ it('object-pattern-newline', function() {
           code: `const obj = {a: 1, b: 2, c: 3}; 
 const {a,
 b,c} = obj;`,
-          errors: [{message: 'Object properties must go on a new line if they aren\'t all on the same line'}],
+          errors: [{message: '\'c\' must go on a new line'}],
           output: `const obj = {a: 1, b: 2, c: 3}; 
 const {a,
 b,
@@ -27,7 +27,10 @@ c} = obj;`,
           code: `const obj = {a: 1, b: 2, c: 3, d: 4}; 
 const {a,b,
 c,d} = obj;`,
-          errors: [{message: 'Object properties must go on a new line if they aren\'t all on the same line'}],
+          errors: [
+            {message: '\'b\' must go on a new line'},
+            {message: '\'d\' must go on a new line'},
+          ],
           output: `const obj = {a: 1, b: 2, c: 3, d: 4}; 
 const {a,
 b,
@@ -36,7 +39,10 @@ d} = obj;`,
         },
         {
           name: 'function params',
-          errors: [{message: 'Object properties must go on a new line if they aren\'t all on the same line'}],
+          errors: [
+            {message: '\'b\' must go on a new line'},
+            {message: '\'d\' must go on a new line'},
+          ],
           code: `function test({a,b, 
 c,d}){}`,
           output: `function test({a,

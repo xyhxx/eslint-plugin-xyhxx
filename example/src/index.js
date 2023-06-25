@@ -2,7 +2,9 @@ function test(val) {
   if (
     val > 10
     || val < 100
-  ) return '';
+  ) console.log(2);
+
+  else console.log(1);
 }
 
 const obj = {a: 1, b: 2, c: 3, d: 4};
